@@ -217,7 +217,6 @@ def index():
         "telegram": "@Redluckyxyz",
         "version": FREEFIRE_VERSION,
         "status": "running ✅",
-        "token_api": TOKEN_API_URL,
         "endpoints": {
             "/bio_upload": {
                 "method": "GET/POST",
