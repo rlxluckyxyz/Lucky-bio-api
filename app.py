@@ -217,17 +217,9 @@ def index():
         "telegram": "@Redluckyxyz",
         "version": FREEFIRE_VERSION,
         "status": "running ✅",
+        "token_api": TOKEN_API_URL,
         "endpoints": {
             "/bio_upload": {
-                "method": "GET/POST",
-                "params": {
-                    "bio": "string (required)",
-                    "jwt": "string (optional - direct JWT)",
-                    "uid": "string (optional - with pass)",
-                    "pass": "string (optional - with uid)"
-                }
-            },
-            "/bio_upload/lucky/v1": {
                 "method": "GET/POST",
                 "params": {
                     "bio": "string (required)",
@@ -241,7 +233,6 @@ def index():
 
 
 @app.route("/bio_upload", methods=["GET", "POST"])
-@app.route("/bio_upload/lucky/v1", methods=["GET", "POST"])
 def combined_bio_upload():
     bio = request.args.get("bio") or request.form.get("bio")
     jwt_token = request.args.get("jwt") or request.form.get("jwt")
